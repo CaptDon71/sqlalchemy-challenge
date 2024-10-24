@@ -37,6 +37,20 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
+# Define what to do when a user hits the home page.
+@app.route("/")
+def welcome():
+    return (
+        f"Welcome to the Honolulu Climate Analysis API!<br/>"
+        f"Available Routes:<br/>"
+        f"/api/v1.0/precipitation<br/>"
+        f"/api/v1.0/stations<br/>"
+        f"/api/v1.0/tobs<br/>"
+        f"/api/v1.0/<start>/<br/>"
+        f"/api/v1.0/<start>/<end>"
+    )
+
+
 # Define what to do when a user hits the precipitation route.
 @app.route("/api/v1.0/precipitation")
 def precipitation():
